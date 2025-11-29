@@ -4,10 +4,14 @@ dependencies = [
   "setuptools<81",
 ]
 description = "Add your description here"
+dynamic = ["version", "license", "authors", "keywords"]
 name = "remi"
 readme = "README.md"
-requires-python = ">=3.12"
-version = "0.1.0"
+requires-python = ">=3.8,<3.13"
 
 [project.scripts]
 xml2remi = "xml2remi.__main__:main"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
