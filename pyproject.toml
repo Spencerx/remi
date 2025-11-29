@@ -1,13 +1,18 @@
 [project]
+authors = [
+  {name = "Davide Rosa", email = "dddomodossola@gmail.com"},
+]
 dependencies = [
   "lxml>=6.0.2",
   "setuptools<81",
 ]
 description = "Add your description here"
-dynamic = ["version", "license", "authors", "keywords"]
+keywords = ["gui-library", "remi", "platform-independent", "ui", "gui"]
+license = {file = "LICENSE"}
 name = "remi"
 readme = "README.md"
 requires-python = ">=3.8,<3.13"
+version = "2025.11.29"
 
 [project.scripts]
 xml2remi = "xml2remi.__main__:main"
