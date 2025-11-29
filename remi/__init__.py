@@ -31,10 +31,11 @@ from .gui import (
 )
 
 from .server import App, Server, start
-from pkg_resources import get_distribution, DistributionNotFound
 
 try:
-    __version__ = get_distribution(__name__).version
-except DistributionNotFound:
-    # package is not installed
+    from importlib.metadata import version
+
+    __version__ = version(__name__)
+except ImportError:
+    # Fallback for older Python versions
     pass

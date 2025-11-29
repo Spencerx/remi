@@ -1,0 +1,13 @@
+[project]
+dependencies = [
+  "lxml>=6.0.2",
+  "setuptools<81",
+]
+description = "Add your description here"
+name = "remi"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[project.scripts]
+xml2remi = "xml2remi.__main__:main"

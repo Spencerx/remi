@@ -1,0 +1,13 @@
+<VBox>
+    <Label text="Hello World" />
+    <Button text="Click Me" />
+    <TabBox>
+        <VBox>
+            <Label text="Content of Tab 1" />
+        </VBox>
+        <HBox>
+            <TextInput />
+            <CheckBox />
+        </HBox>
+    </TabBox>
+</VBox>
