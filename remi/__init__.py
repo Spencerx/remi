@@ -31,10 +31,33 @@ from .gui import (
 )
 
 from .server import App, Server, start
-from pkg_resources import get_distribution, DistributionNotFound
 
+# importlib.metadata is available in Python 3.8+
+useForVersionCheck = None
 try:
-    __version__ = get_distribution(__name__).version
-except DistributionNotFound:
-    # package is not installed
+    import importlib.metadata
+    useForVersionCheck = "importlib.metadata"
+except ImportError:
+    try:
+        import pkg_resources
+        useForVersionCheck = "pkg_resources"
+    except ImportError:
+        pass
+
+if useForVersionCheck == "importlib.metadata":
+    from importlib.metadata import version, PackageNotFoundError
+    try:
+        __version__ = version(__name__)
+    except PackageNotFoundError:
+        # package is not installed
+        pass
+elif useForVersionCheck == "pkg_resources":
+    from pkg_resources import get_distribution, DistributionNotFound
+    try:
+        __version__ = get_distribution(__name__).version
+    except DistributionNotFound:
+        # package is not installed
+        pass
+else:
+    # neither importlib.metadata nor pkg_resources is available
     pass
