@@ -60,4 +60,4 @@ elif useForVersionCheck == "pkg_resources":
         pass
 else:
     # neither importlib.metadata nor pkg_resources is available
-    pass
+    print("WARNING: cannot check remi version, please install importlib-metadata (python >= 3.8) or the pkg_resources module by installing setuptools")
