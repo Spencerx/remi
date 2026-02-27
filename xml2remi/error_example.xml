@@ -1,0 +1,5 @@
+<VBox>
+    <Label text="Hello World" />
+    <WrongWidget text="Error" />
+    <Button text="Click Me" />
+</VBox>
