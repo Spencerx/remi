@@ -21,11 +21,11 @@ params = {
     'packages':setuptools.find_packages(),
     'include_package_data':True,
     'setup_requires':['setuptools_scm'],
+    'version': '2026.02.04',
 }
 try:
     setup(**params)
 except:
     del params['setup_requires']
     params['use_scm_version'] = False
-    params['version'] = '2022.7.27'
     setup(**params)
